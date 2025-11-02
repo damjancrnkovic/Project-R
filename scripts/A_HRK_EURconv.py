@@ -17,8 +17,24 @@ TURNOVER_CCY_COL = "Turnover Currency"
 xls = pd.ExcelFile(SRC)
 summary_rows = []
 
+# zadrži:
+# - sve sheetove bez -R-A
+# - sheetove s -R-A samo ako ne postoji njihova verzija bez nastavka
+all_sheets = xls.sheet_names
+base_names = set(s.replace("-R-A", "") for s in all_sheets)
+filtered_sheets = []
+izbaceni=[]
+for name in all_sheets:
+    if name.endswith("-R-A"):
+        if name.replace("-R-A", "") not in all_sheets:
+            filtered_sheets.append(name)
+        else:
+            izbaceni.append(name)
+    else:
+        filtered_sheets.append(name)
+
 with pd.ExcelWriter(DST, engine="xlsxwriter") as writer:
-    for sheet in xls.sheet_names:
+    for sheet in filtered_sheets:
         df = xls.parse(sheet)
         df.columns = [str(c).strip() for c in df.columns]
 
@@ -56,3 +72,4 @@ summary = pd.DataFrame(summary_rows).sort_values("Sheet")
 print("\n=== HRK → EUR konverzija: sažetak ===")
 print(summary.to_string(index=False))
 print(f"\nKonvertirana datoteka spremljena kao: {DST}")
+

@@ -43,6 +43,6 @@ for link in links:
     page = requests.get(news_URL)
     soup = BeautifulSoup(page.content, "html.parser")
     title=soup.find("div",class_="page-title")
-    print(title.text)
+    #print(title.text)
 
 

@@ -1,2 +1,2 @@
 # Projekt-R
-git repozitorij za potrebe projekta  na predmetu Projekt R pod vodstvom prof. Stjepana Begušića
+Repozitorij sadrži projekt izrađen u sklopu kolegija **Projekt R** pod mentorstvom doc. dr. sc. Stjepana Begušića na Fakultetu elektrotehnike i računarstva.

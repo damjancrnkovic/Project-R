@@ -1,2 +1,3 @@
 # Projekt-R
-Repozitorij sadrži projekt izrađen u sklopu kolegija **Projekt R** pod mentorstvom doc. dr. sc. Stjepana Begušića na Fakultetu elektrotehnike i računarstva.
+
+This repository contains a project developed as part of the **Projekt R** course, supervised by Assistant Professor Stjepan Begušić at the Faculty of Electrical Engineering and Computing (FER). The project is ongoing and focuses on analyzing the impact of insertions and deletions of new stocks in the Croatian market index (CROBEX) and on identifying trends early.
